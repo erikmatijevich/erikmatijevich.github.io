@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Movies</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body onLoad="dotime()">
+    <table>
+		<td height="100%" width="100%" align="center" valign="middle">
+			<div>
+				<p>
+					<h1>Movies</h1>
+				</p>
+				<p>
+					<h3>Moonrise Kingdom - 8.0 / 10 (2/26/2015)</h3>	
+				</p>
+				<p>
+					<h3>Repulsion - 7.5 / 10 (2/25/2015)</h3>	
+				</p>
+				<p>
+					<h3>Braindead - 4.0 / 10 (2/24/2015)</h3>	
+				</p>
+				<p>
+					<h3>Funny Games (1997) - 7.0 / 10 (2/19/2015)</h3>	
+				</p>
+				<p>
+					<h3>Suspiria - 7.5 / 10 (2/19/2015)</h3>	
+				</p>
+				<p>
+					<h3>Antichrist - 6.0 / 10 (2/18/2015)</h3>	
+				</p>
+				<p>
+					<h3>City of God - 8.0 / 10 (2/14/2015)</h3>	
+				</p>
+				<p>
+					<h3>Evil Dead 2 - 7.0 / 10 (2/11/2015)</h3>	
+				</p>
+				<p>
+					<h3>Best in Show - 7.5 / 10 (2/10/2015)</h3>	
+				</p>
+				<p>
+					<h3>Mac and Devin Go to Highschool - 4 / 20 (2/9/2015)</h3>	
+				</p>
+				<p>
+					<h3>The Den - 5.5 / 10 (2/9/2015)</h3>	
+				</p>
+				<p>
+					<h3>Snatch - 8.0 / 10 (2/8/2015)</h3>	
+				</p>
+				<p>
+					<h3>A Serbian Film - 3.5 / 10 (2/4/2015)</h3>	
+				</p>
+				<p>
+					<h3>The Evil Dead - 7.5 / 10 (2/2/2015)</h3>	
+				</p>
+				<p>
+					<h3>Drive - 8.0 / 10 (1/28/2015)</h3>	
+				</p>
+				<p>
+					<h3>Nightcrawler - 6.0 / 10 (1/26/2015)</h3>	
+				</p>
+				<p>
+					<h3>House (1977) - 7.0 / 10 (1/14/2015)</h3>	
+				</p>
+				
+			</div>
+		</td>
+	</table>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+//Source: http://whatcolourisit.scn9a.org/
+function dotime(){ 
+
+	$("body").css({"transition": "all 0.8s", "-webkit-transition": "all 0.8s"});
+	
+	var d = new Date();
+	var hours = d.getHours();
+	var mins = d.getMinutes();
+	var secs = d.getSeconds();
+	
+	if (hours < 10){hours = "0" + hours};
+	if (mins < 10){mins = "0" + mins};
+	if (secs < 10){secs = "0" + secs};
+	
+	hours.toString();
+	mins.toString();
+	secs.toString();
+	var hex = "#" + hours + mins + secs;
+	var complement = invertColor(hex);
+
+	$("#c").text(complement).css("color", hex);
+	$("#t").text("Erik Matijevich").css("color",hex);
+
+	document.body.style.background = complement;
+	
+	setTimeout(function(){ dotime();}, 1000);
+}
+function invertColor(hexTripletColor) {
+    var color = hexTripletColor;
+    color = color.substring(1);    
+    color = parseInt(color, 16); 
+    color = 0xFFFFFF ^ color;
+    color = color.toString(16);     
+    color = ("000000" + color).slice(-6);
+    color = "#" + color;
+    return color;
+}
+</script>
+</html>
