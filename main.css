@@ -29,9 +29,21 @@ h2 {
   color:gray; 
 }
 
+h2 { 
+  font-family:"open sans"; 
+  font-weight: lighter;
+  font-size:18px; 
+  color:gray; 
+}
 h3 {
   font-family:"open sans"; 
   font-weight: lighter;
   font-size:20px; 
+  color:black; 
+}
+h4 {
+  font-family:"open sans"; 
+  font-weight: lighter;
+  font-size:6px; 
   color:black; 
 }
